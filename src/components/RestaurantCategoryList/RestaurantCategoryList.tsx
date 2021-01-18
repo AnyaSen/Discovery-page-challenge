@@ -24,7 +24,15 @@ export default function RestaurantCategoryList({
       <h1>{title} </h1>
 
       {restaurantArray.map((restaurant, index) => {
-        return <Restaurant key={index} name={restaurant.name} />;
+        const { name, blurhash, online } = restaurant;
+        return (
+          <Restaurant
+            key={index}
+            name={name}
+            blurhash={blurhash}
+            online={online}
+          />
+        );
       })}
     </div>
   );

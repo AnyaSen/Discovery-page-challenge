@@ -8,11 +8,13 @@ export default function DiscoveryPage(): ReactElement {
   return (
     <div>
       {data.sections.map((categoryInfo, index) => {
+        const { title, restaurants } = categoryInfo;
+
         return (
           <RestaurantCategoryList
             key={index}
-            title={categoryInfo.title}
-            restaurantArray={categoryInfo.restaurants}
+            title={title}
+            restaurantArray={restaurants}
           />
         );
       })}
