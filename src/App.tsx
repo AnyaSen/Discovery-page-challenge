@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.scss";
 
+import DiscoveryPage from "./pages";
+
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <DiscoveryPage />
     </div>
   );
 }
