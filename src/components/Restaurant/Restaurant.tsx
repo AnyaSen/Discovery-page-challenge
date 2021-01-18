@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 
 import { BlurhashCanvas } from "react-blurhash";
 
+import Styles from "./Restaurant.module.scss";
+
 interface Props {
   name: string;
   blurhash: string;
@@ -14,10 +16,12 @@ export default function Restaurant({
   online
 }: Props): ReactElement {
   return (
-    <div>
-      <p>{name} </p>
-      <p>{online ? "ONLINE" : "OFFLINE"}</p>
-      <BlurhashCanvas hash={blurhash} width={300} height={200} punch={1} />
+    <div className={Styles.Restaurant}>
+      <BlurhashCanvas hash={blurhash} width={260} height={180} punch={1} />
+      <h3>{name} </h3>
+      <p style={{ color: online ? "green" : "red" }}>
+        {online ? "Online" : "Offline"}
+      </p>
     </div>
   );
 }

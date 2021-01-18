@@ -1,0 +1,25 @@
+@import "../../assets/scss/variables";
+
+.RestaurantCategoryListContainer {
+  margin: $space-5 $space-3;
+
+  .Header {
+    display: flex;
+
+    h1 {
+      margin: $space-1;
+      margin-left: $space-5;
+    }
+
+    .ArrowsContainer {
+      display: flex;
+      align-self: center;
+    }
+  }
+
+  .RestaurantCategoryList {
+    display: flex;
+    margin: $space-3;
+    width: 90%;
+  }
+}

@@ -1,0 +1,18 @@
+@import "../../assets/scss/variables";
+
+.Arrow {
+  outline: none;
+  text-decoration: none;
+  border: none;
+  background-color: $color-white;
+  cursor: pointer;
+  padding: $space-0 $space-1;
+
+  img {
+    height: 1.3rem;
+  }
+}
+
+.Arrow:hover {
+  background-color: $color-grey;
+}

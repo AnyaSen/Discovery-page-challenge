@@ -1,0 +1,10 @@
+@import "../../assets/scss/variables";
+
+.Restaurant {
+  margin: $space-3;
+  line-height: 1.5rem;
+
+  h3 {
+    margin: 0;
+  }
+}
