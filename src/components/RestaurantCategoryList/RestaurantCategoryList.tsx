@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 
 import Styles from "./RestaurantCategoryList.module.scss";
 import arrowRight from "../../assets/img/arrow-right.svg";
@@ -26,11 +26,26 @@ export default function RestaurantCategoryList({
   restaurantArray
 }: Props): ReactElement {
   const initialStartingPoint = 0;
-  const initialLastPoint = 4;
 
   const arrayLength = restaurantArray.length;
   const doubledArray = restaurantArray.concat(restaurantArray);
 
+  const defineInitialLastPointBasedOnScreenWidth = () => {
+    if (window.innerWidth > 1100) {
+      return 4;
+    } else if (window.innerWidth <= 1100 && window.innerWidth > 720) {
+      return 3;
+    } else if (window.innerWidth <= 720 && window.innerWidth > 599) {
+      return 2;
+    } else if (window.innerWidth <= 599) {
+      return 1;
+    }
+    return 3;
+  };
+
+  const [initialLastPoint, setInitialLastPoint] = useState(
+    defineInitialLastPointBasedOnScreenWidth()
+  );
   const [startingPoint, setStartingPoint] = useState(initialStartingPoint);
   const [lastPoint, setLastPoint] = useState(initialLastPoint);
 
@@ -39,7 +54,7 @@ export default function RestaurantCategoryList({
     setLastPoint(lastPoint + 1);
 
     if (lastPoint === arrayLength * 2) {
-      setStartingPoint(arrayLength - 3);
+      setStartingPoint(arrayLength - (initialLastPoint - 1));
       setLastPoint(arrayLength + 1);
     }
   };
@@ -47,14 +62,14 @@ export default function RestaurantCategoryList({
   const moveCarouselBackword = () => {
     if (startingPoint === initialStartingPoint) {
       setStartingPoint(arrayLength - 1);
-      setLastPoint(arrayLength + 3);
+      setLastPoint(arrayLength + (initialLastPoint - 1));
     } else {
       setStartingPoint(startingPoint - 1);
       setLastPoint(lastPoint - 1);
     }
   };
 
-  const needsCarousel = restaurantArray.length > 4;
+  const needsCarousel = restaurantArray.length > initialLastPoint;
 
   const cropRestArray = () => {
     if (needsCarousel) {
@@ -62,6 +77,42 @@ export default function RestaurantCategoryList({
     }
     return restaurantArray;
   };
+
+  const handleResize = () => {
+    if (window.innerWidth > 1100) {
+      setInitialLastPoint(4);
+
+      setStartingPoint(initialStartingPoint);
+      setLastPoint(initialLastPoint);
+    } else if (window.innerWidth <= 1100 && window.innerWidth > 720) {
+      setInitialLastPoint(3);
+
+      setStartingPoint(initialStartingPoint);
+      setLastPoint(initialLastPoint);
+    } else if (window.innerWidth <= 720 && window.innerWidth > 599) {
+      setInitialLastPoint(2);
+
+      setStartingPoint(initialStartingPoint);
+      setLastPoint(initialLastPoint);
+    } else if (window.innerWidth <= 599) {
+      setInitialLastPoint(1);
+
+      setStartingPoint(initialStartingPoint);
+      setLastPoint(initialLastPoint);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [window.innerWidth]);
+
+  useEffect(() => {
+    handleResize();
+  }, []);
 
   return (
     <div className={Styles.RestaurantCategoryListContainer}>

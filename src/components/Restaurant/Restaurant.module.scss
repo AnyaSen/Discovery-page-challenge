@@ -1,4 +1,5 @@
 @import "../../assets/scss/variables";
+@import "../../assets/scss/breakpoints";
 
 .Restaurant {
   margin: $space-3;
@@ -6,5 +7,25 @@
 
   h3 {
     margin: 0;
+  }
+
+  canvas {
+    border-radius: 0.5rem;
+
+    @include xl {
+      width: 200px;
+    }
+
+    @include md {
+      width: 230px;
+    }
+  }
+
+  @include lg {
+    margin: $space-1;
+  }
+
+  @include sm {
+    margin: $space-0;
   }
 }

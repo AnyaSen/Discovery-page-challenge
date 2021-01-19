@@ -4,7 +4,7 @@ $font-xxs: $base_unit * 1.5; // 0.75rem
 $font-xs: $base_unit * 1.75; // 0.875rem
 $font-sm: $base_unit * 2; // 1rem
 $font-md: $base_unit * 2.4; // 1.2rem
-$font-lg: $base_unit * 4; // 2rem
+$font-lg: $base_unit * 3; // 2rem
 $font-xl: $base_unit * 5; // 2.5rem
 
 $space-0: $base_unit * 1; // 0.5rem
@@ -18,5 +18,6 @@ $space-6: $base_unit * 10; // 5rem
 $color-text: #202125;
 $color-grey: #f3f2f2;
 $color-white: #ffffff;
+$color-blue: #009de0;
 
 $shadow-1: 0px 3px 6px rgba(214, 214, 214, 0.58);
