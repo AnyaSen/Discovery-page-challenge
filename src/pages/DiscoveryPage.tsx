@@ -1,12 +1,13 @@
 import React, { ReactElement } from "react";
+import data from "../data/discovery_page.json";
 
 import RestaurantCategoryList from "../components/RestaurantCategoryList";
-
-import data from "../data/discovery_page.json";
+import NavIcon from "../components/NavIcon";
 
 export default function DiscoveryPage(): ReactElement {
   return (
     <div>
+      <NavIcon />
       {data.sections.map((categoryInfo, index) => {
         const { title, restaurants } = categoryInfo;
 
