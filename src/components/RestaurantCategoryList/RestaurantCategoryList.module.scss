@@ -49,5 +49,26 @@
     @include sm {
       justify-content: center;
     }
+
+    canvas {
+      transition: animation 0.35s ease-in-out;
+    }
+  }
+}
+
+.AnimatedRestaurantCategoryList {
+  @extend .RestaurantCategoryList;
+
+  canvas {
+    animation: scaleAnimation 0.35s ease-in-out;
+  }
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }

@@ -48,8 +48,17 @@ export default function RestaurantCategoryList({
   );
   const [startingPoint, setStartingPoint] = useState(initialStartingPoint);
   const [lastPoint, setLastPoint] = useState(initialLastPoint);
+  const [animate, setAnimate] = useState(false);
+
+  const addAnimation = () => {
+    setAnimate(true);
+    setTimeout(() => {
+      setAnimate(false);
+    }, 350);
+  };
 
   const moveCarouselForward = () => {
+    addAnimation();
     setStartingPoint(startingPoint + 1);
     setLastPoint(lastPoint + 1);
 
@@ -60,6 +69,7 @@ export default function RestaurantCategoryList({
   };
 
   const moveCarouselBackword = () => {
+    addAnimation();
     if (startingPoint === initialStartingPoint) {
       setStartingPoint(arrayLength - 1);
       setLastPoint(arrayLength + (initialLastPoint - 1));
@@ -108,7 +118,7 @@ export default function RestaurantCategoryList({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [window.innerWidth]);
+  });
 
   useEffect(() => {
     handleResize();
@@ -136,7 +146,13 @@ export default function RestaurantCategoryList({
         )}
       </div>
 
-      <div className={Styles.RestaurantCategoryList}>
+      <div
+        className={
+          animate
+            ? Styles.AnimatedRestaurantCategoryList
+            : Styles.RestaurantCategoryList
+        }
+      >
         {cropRestArray().map((restaurant, index) => {
           const { name, blurhash, online } = restaurant;
           return (
