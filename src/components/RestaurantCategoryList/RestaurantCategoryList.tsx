@@ -1,4 +1,5 @@
 import React, { ReactElement, useState, useEffect } from "react";
+import { defineInitialLastPointBasedOnScreenWidth } from "../../services/defineInitialLastPointBasedOnScreenWidth";
 
 import Styles from "./RestaurantCategoryList.module.scss";
 import arrowRight from "../../assets/img/arrow-right.svg";
@@ -27,21 +28,7 @@ export default function RestaurantCategoryList({
 }: Props): ReactElement {
   const initialStartingPoint = 0;
 
-  const arrayLength = restaurantArray.length;
   const doubledArray = restaurantArray.concat(restaurantArray);
-
-  const defineInitialLastPointBasedOnScreenWidth = () => {
-    if (window.innerWidth > 1100) {
-      return 4;
-    } else if (window.innerWidth <= 1100 && window.innerWidth > 720) {
-      return 3;
-    } else if (window.innerWidth <= 720 && window.innerWidth > 599) {
-      return 2;
-    } else if (window.innerWidth <= 599) {
-      return 1;
-    }
-    return 3;
-  };
 
   const [initialLastPoint, setInitialLastPoint] = useState(
     defineInitialLastPointBasedOnScreenWidth()
@@ -56,6 +43,8 @@ export default function RestaurantCategoryList({
       setAnimate(false);
     }, 350);
   };
+
+  const arrayLength = restaurantArray.length;
 
   const moveCarouselForward = () => {
     addAnimation();
