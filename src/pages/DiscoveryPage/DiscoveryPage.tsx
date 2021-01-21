@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
-import data from "../data/discovery_page.json";
+import data from "../../data/discovery_page.json";
 
-import RestaurantCategoryList from "../components/RestaurantCategoryList";
-import NavIcon from "../components/NavIcon";
+import RestaurantCategoryList from "../../components/RestaurantCategoryList";
+import NavIcon from "../../components/NavIcon";
 
 export default function DiscoveryPage(): ReactElement {
   return (

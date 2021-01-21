@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 
-import DiscoveryPage from "./pages";
+import DiscoveryPage from "./pages/DiscoveryPage";
 
 function App() {
   return (
