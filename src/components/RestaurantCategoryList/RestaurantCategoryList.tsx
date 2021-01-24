@@ -9,12 +9,9 @@ import Restaurant from "../Restaurant";
 import Arrow from "../Arrow";
 
 interface RestaurantType {
-  blurhash: string;
-  launch_date: string;
-  location: number[];
+  blurhash?: string;
   name: string;
   online: boolean;
-  popularity: number;
 }
 
 interface Props {

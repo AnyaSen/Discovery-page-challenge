@@ -28,7 +28,7 @@ export default function Restaurant({
   }
 
   return (
-    <div className={Styles.Restaurant}>
+    <div className={Styles.Restaurant} data-testid="restaurant">
       <h3>{name} </h3>
       <p style={{ color: online ? "green" : "red" }}>
         {online ? "Online" : "Offline"}

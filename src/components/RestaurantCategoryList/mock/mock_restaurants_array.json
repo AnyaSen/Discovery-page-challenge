@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Sea Chain",
+    "online": true
+  },
+  {
+    "name": "Salt",
+    "online": true
+  },
+  {
+    "name": "Fake Tomato Mafia",
+    "online": true
+  },
+  {
+    "name": "Charming Pepper Emporium",
+    "online": true
+  },
+  {
+    "name": "Loving Meat Basket",
+    "online": true
+  },
+  {
+    "name": "Vegetable Factory",
+    "online": true
+  },
+  {
+    "name": "Cucumber Hotel",
+    "online": true
+  },
+  {
+    "name": "Horrific Lettuce",
+    "online": true
+  },
+  {
+    "name": "Real Pizza Factory",
+    "online": true
+  },
+  {
+    "name": "Rosemary",
+    "online": false
+  }
+]
