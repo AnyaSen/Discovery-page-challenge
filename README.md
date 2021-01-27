@@ -14,7 +14,9 @@ This page renders restaurants, grouped into 3 categories: Popular, New, and Near
 
 ## Demo video
 
-[Click to watch the video]()
+[Click to watch the video](https://youtu.be/UB7qR8R5T08)
+
+<a href='https://youtu.be/UB7qR8R5T08'><img src='./video-img.png' alt='Video image'></a>
 
 ## Technologies used
 
