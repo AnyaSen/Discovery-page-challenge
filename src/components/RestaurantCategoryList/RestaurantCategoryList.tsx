@@ -6,7 +6,7 @@ import arrowRight from "../../assets/img/arrow-right.svg";
 import arrowLeft from "../../assets/img/arrow-left.svg";
 
 import Restaurant from "../Restaurant";
-import Arrow from "../Arrow";
+import ArrowButton from "../ArrowButton";
 
 interface RestaurantType {
   blurhash?: string;
@@ -117,13 +117,13 @@ export default function RestaurantCategoryList({
 
         {needsCarousel && (
           <div className={Styles.ArrowsContainer}>
-            <Arrow
+            <ArrowButton
               onClick={moveCarouselBackword}
               imgSrc={arrowLeft}
               altText="Go Backwards"
             />
 
-            <Arrow
+            <ArrowButton
               onClick={moveCarouselForward}
               imgSrc={arrowRight}
               altText="Go Forward"

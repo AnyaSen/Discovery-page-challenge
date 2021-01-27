@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import Styles from "./Arrow.module.scss";
+import Styles from "./ArrowButton.module.scss";
 
 interface Props {
   imgSrc: string;
@@ -7,13 +7,17 @@ interface Props {
   onClick: () => void;
 }
 
-export default function Arrow({
+export default function ArrowButton({
   onClick,
   imgSrc,
   altText
 }: Props): ReactElement {
   return (
-    <button onClick={onClick} className={Styles.Arrow} data-testid="arrow">
+    <button
+      onClick={onClick}
+      className={Styles.ArrowButton}
+      data-testid="arrow"
+    >
       <img src={imgSrc} alt={altText} />
     </button>
   );

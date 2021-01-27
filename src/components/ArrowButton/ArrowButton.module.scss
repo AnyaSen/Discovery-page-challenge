@@ -1,6 +1,6 @@
 @import "../../assets/scss/variables";
 
-.Arrow {
+.ArrowButton {
   outline: none;
   text-decoration: none;
   border: none;
@@ -13,6 +13,6 @@
   }
 }
 
-.Arrow:hover {
+.ArrowButton:hover {
   background-color: $color-grey;
 }
