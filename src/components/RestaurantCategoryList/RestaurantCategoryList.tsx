@@ -67,7 +67,7 @@ export default function RestaurantCategoryList({
 
   const needsCarousel = restaurantArray.length > initialLastPoint;
 
-  const cropRestArray = () => {
+  const cropRestaurantsArray = () => {
     if (needsCarousel) {
       return doubledArray.slice(startingPoint, lastPoint);
     }
@@ -139,7 +139,7 @@ export default function RestaurantCategoryList({
             : Styles.RestaurantCategoryList
         }
       >
-        {cropRestArray().map((restaurant, index) => {
+        {cropRestaurantsArray().map((restaurant, index) => {
           const { name, blurhash, online } = restaurant;
           return (
             <Restaurant
